@@ -405,7 +405,6 @@
     <None Include="resources\engine\texture\box-shadow\8.png">
       <Filter>Resource Files\resources\engine\texture\box-shadow</Filter>
     </None>
-
     <None Include="example\LICENSE.txt">
       <Filter>Resource Files\example</Filter>
     </None>
@@ -784,7 +783,6 @@
     <None Include="example\zip\zip_test.zip">
       <Filter>Resource Files\example\zip</Filter>
     </None>
-
   </ItemGroup>
   <ItemGroup>
     <None Include="Templates\Embeddable\web-player.html">
@@ -798,5 +796,22 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="house.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="house.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

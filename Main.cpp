@@ -1,33 +1,34 @@
 # include <Siv3D.hpp>
 
+#include "core.h"
+#include "game.h"
+
 void Main()
 {
-    // Set background color to sky blue
-    Scene::SetBackground(ColorF{ 0.8, 0.9, 1.0 });
-
-    // Create a new font
-    const Font font{ 60 };
-    
-    // Create a new emoji font
-    const Font emojiFont{ 60, Typeface::ColorEmoji };
-    
-    // Set emojiFont as a fallback
-    font.addFallback(emojiFont);
+    Scene::SetResizeMode(ResizeMode::Keep);     // リサイズモード
+    Window::Resize(WIDTH_X, WIDTH_Y);           // リサイズ
+    Scene::SetBackground(ColorF{ SKY_BLUE });   // 背景色の設定
+       
+    Game game;                                  // ゲーム画面
+    int game_state = 0;                         // 今のゲームの状態
 
     // Create a texture from an image file
-    const Texture texture{ U"example/windmill.png" };
-
-    // Create a texture from an emoji
-    const Texture emoji{ U"🐈"_emoji };
-
-    // Coordinates of the emoji
-    Vec2 emojiPos{ 300, 150 };
-
-    // Print a text
-    Print << U"Push [A] key";
+    // const Texture texture{ U"example/windmill.png" };
 
     while (System::Update())
     { 
+        switch(game_state)
+        {
+        case TITLE_SCREEN:
+            game_state = game.titleScreen();
+            break;
+
+        case GAME_SCREEN:
+            game_state = game.mainScreen();
+            break;
+        }
+
+        /*
         // Draw a texture
         texture.draw(200, 200);
 
@@ -53,5 +54,6 @@ void Main()
             // Move the coordinates to a random position in the screen
             emojiPos = RandomVec2(Scene::Rect());
         }
+        */
     }
 }
