@@ -11,9 +11,12 @@ void Main()
        
     Game game;                                  // ゲーム画面
     int game_state = 0;                         // 今のゲームの状態
+    int num_dushed_houses = 0;                  // ピンポンダッシュに成功した家の数
 
     // Create a texture from an image file
     // const Texture texture{ U"example/windmill.png" };
+
+    game.setNumHouse(2);
 
     while (System::Update())
     { 
@@ -29,15 +32,6 @@ void Main()
         }
 
         /*
-        // Draw a texture
-        texture.draw(200, 200);
-
-        // Put a text in the middle of the screen
-        font(U"Hello, Siv3D!🚀").drawAt(Scene::Center(), Palette::Black);
-
-        // Draw a texture with animated size
-        emoji.resized(100 + Periodic::Sine0_1(1s) * 20).drawAt(emojiPos);
-
         // Draw a red transparent circle that follows the mouse cursor
         Circle{ Cursor::Pos(), 40 }.draw(ColorF{ 1, 0, 0, 0.5 });
 
