@@ -29,6 +29,8 @@ int Game::titleScreen()
 
     if (SimpleGUI::Button(U"Start", Vec2{ 100, 500 }, 100))
     {
+        srand(0);
+
         stopwatch.restart();
         return GAME_SCREEN;
     }
@@ -80,7 +82,7 @@ int Game::mainScreen()
         jumpOutStr(U"CLEAR");
     }
 
-    if (m_house_x <= -HOUSE_SIZE + 2)
+    if (m_house_x <= -HOUSE_SIZE / 2)
     {
         setNGHouse();
         m_is_pinponed = false;
@@ -99,10 +101,12 @@ int Game::gameOverScreen()
     m_house_buttons[0].isClicked(false);
     m_house_buttons[1].isClicked(false);
 
-    m_font(U"Score:{}"_fmt(m_num_dushed_houses)).drawAt(Scene::Center(), Palette::Black);
+    m_font(U"Game Over\nScore:{}"_fmt(m_num_dushed_houses)).drawAt(Scene::Center(), Palette::Black);
 
     if (SimpleGUI::Button(U"Restart", Vec2{ 100, 500 }, 100))
     {
+        srand(0);
+
         setNumHouse(2);
 
         stopwatch.restart();

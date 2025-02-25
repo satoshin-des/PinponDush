@@ -12,7 +12,7 @@ void Main()
     Game game;                                  // ゲーム画面
     int game_state = 0;                         // 今のゲームの状態
 
-    srand((unsigned int)time(nullptr));
+    srand(0);
 
     while (System::Update())
     {
