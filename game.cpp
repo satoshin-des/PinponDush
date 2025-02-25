@@ -1,10 +1,5 @@
 #include "game.h"
 
-void Game::setNumHouse(const int n)
-{
-    m_num_house = n;
-}
-
 void Game::setNGHouse()
 {
     okHouseIndex = rand() % m_num_house;
@@ -17,7 +12,7 @@ void Game::jumpOutStr(const String str)
 
 int Game::titleScreen()
 {
-    m_house_x = WIDTH_X + HOUSE_SIZE - static_cast<long>(300 * m_house_spd * stopwatch.sF()) % (WIDTH_X + 2 * HOUSE_SIZE);
+    m_house_x = WIDTH_X + HOUSE_SIZE - 300 * m_house_spd * stopwatch.sF();
 
     // ‰Æ‚Ì•\Ž¦
     m_house_buttons[0].setPos(m_house_x, WIDTH_Y_HALF + HOUSE_SIZE);
@@ -41,15 +36,20 @@ int Game::titleScreen()
         return OPTION_SCREEN;
     }
 
+    if (m_house_x <= -HOUSE_SIZE)
+    {
+        stopwatch.restart();
+    }
+
 	return TITLE_SCREEN;
 }
 
 int Game::mainScreen()
 {   
     m_score_font(U"Score: {}"_fmt(m_num_dushed_houses)).draw(0, 0, Palette::Black);
-    m_score_font(U"\nokindex: {}"_fmt(okHouseIndex)).draw(0, 0, Palette::Black);
+    // m_score_font(U"\nokindex: {}"_fmt(okHouseIndex)).draw(0, 0, Palette::Black);
 
-    m_house_x = WIDTH_X + HOUSE_SIZE - static_cast<long>(300 * m_house_spd * stopwatch.sF()) % (WIDTH_X + 2 * HOUSE_SIZE);
+    m_house_x = WIDTH_X + HOUSE_SIZE - 300 * m_house_spd * stopwatch.sF();
 
     for (int i = 0; i < m_num_house; ++i)
     {
@@ -73,6 +73,10 @@ int Game::mainScreen()
             else
             {
                 stopwatch.restart();
+
+                m_num_house = 2;
+                setNGHouse();
+
                 return GAME_OVER_SCREEN;
             }
         }
@@ -83,18 +87,30 @@ int Game::mainScreen()
         jumpOutStr(U"CLEAR");
     }
 
-    if (m_house_x <= -HOUSE_SIZE / 2)
+    if (m_house_x <= -HOUSE_SIZE)
     {
+        if (!m_is_pinponed)
+        {
+            stopwatch.restart();
+
+            m_num_house = 2;
+            setNGHouse();
+
+            return GAME_OVER_SCREEN;
+        }
+
+        stopwatch.restart();
+
         setNGHouse();
         m_is_pinponed = false;
     }
-
+    
     return GAME_SCREEN;
 }
 
 int Game::gameOverScreen()
 {
-    m_house_x = WIDTH_X + HOUSE_SIZE - static_cast<long>(300 * m_house_spd * stopwatch.sF()) % (WIDTH_X + 2 * HOUSE_SIZE);
+    m_house_x = WIDTH_X + HOUSE_SIZE - 300 * m_house_spd * stopwatch.sF();
 
     // ‰Æ‚Ì•\Ž¦
     m_house_buttons[0].setPos(m_house_x, WIDTH_Y_HALF + HOUSE_SIZE);
@@ -108,9 +124,6 @@ int Game::gameOverScreen()
     {
         srand(0);
 
-        setNumHouse(2);
-        setNGHouse();
-
         stopwatch.restart();
         m_num_dushed_houses = 0;
         return GAME_SCREEN;
@@ -118,12 +131,14 @@ int Game::gameOverScreen()
 
     if (SimpleGUI::Button(U"Finish", Vec2{ WIDTH_X - 200, 500 }, 100))
     {
-        setNumHouse(2);
-        setNGHouse();
-
         stopwatch.restart();
         m_num_dushed_houses = 0;
         return TITLE_SCREEN;
+    }
+
+    if (m_house_x <= -HOUSE_SIZE)
+    {
+        stopwatch.restart();
     }
 
     return GAME_OVER_SCREEN;

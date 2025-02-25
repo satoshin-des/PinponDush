@@ -29,12 +29,6 @@ private:
 	House m_house_buttons[100];											// 家
 
 public:
-	/// <summary>
-	/// ピンポン可能な家の数
-	/// </summary>
-	/// <param name="n">個数</param>
-	void setNumHouse(const int n);
-	
 	void setNGHouse();
 
 	void jumpOutStr(const String str);
