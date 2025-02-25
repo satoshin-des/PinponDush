@@ -17,6 +17,7 @@ private:
 	int m_num_house = 2;
 	int m_num_dushed_houses = 0;
 	int okHouseIndex = 0;
+	double m_house_spd = 3.0;
 	const Font m_font{ 60 };
 	const Texture m_house{ U"🏠"_emoji };
 
@@ -40,11 +41,16 @@ public:
 	/// <summary>
 	/// メインのゲーム画面の描画
 	/// </summary>
-	/// <param name="num_dushed_house">ピンポンダッシュに成功した家の数</param>
 	/// <returns>ゲーム状態</returns>
 	int mainScreen();
 
+	/// <summary>
+	/// ゲームオーバー画面の描画
+	/// </summary>
+	/// <returns>ゲーム状態</returns>
 	int gameOverScreen();
+
+	int optionScreen();
 };
 
 #endif // !GAME_H

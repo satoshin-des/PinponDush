@@ -7,11 +7,14 @@
 class House
 {
 private:
+	int m_house_label;
 	double m_x;
 	double m_y;
-	const Texture m_house{ U"🏠"_emoji };
+	Texture m_house{ U"🏠"_emoji };
 
 public:
+	void setDesign();
+
 	/// <summary>
 	/// 家を表示する場所を設定する
 	/// </summary>
@@ -23,7 +26,7 @@ public:
 	/// 家がクリックされたかどうかを判定する関数
 	/// </summary>
 	/// <returns>クリックされたらtrue，そうじゃなければfalse</returns>
-	bool isClicked();
+	bool isClicked(const bool canClick);
 };
 
 #endif // !HOUSE_H

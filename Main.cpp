@@ -30,6 +30,10 @@ void Main()
         case GAME_OVER_SCREEN:
             game_state = game.gameOverScreen();
             break;
+
+        case OPTION_SCREEN:
+            game_state = game.optionScreen();
+            break;
         }
     }
 }
