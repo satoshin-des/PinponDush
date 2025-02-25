@@ -2,6 +2,7 @@
 #define HOUSE_H
 
 #include <Siv3D.hpp>
+
 #include "core.h"
 
 class House

@@ -10,7 +10,6 @@ void Main()
     Scene::SetBackground(ColorF{ SKY_BLUE });   // 背景色の設定
        
     Game game;                                  // ゲーム画面
-    int num_house = 2;                          // 一度に出現する家の数
     int game_state = 0;                         // 今のゲームの状態
 
     srand((unsigned int)time(nullptr));
