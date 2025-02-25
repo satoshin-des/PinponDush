@@ -47,6 +47,7 @@ int Game::titleScreen()
 int Game::mainScreen()
 {   
     m_score_font(U"Score: {}"_fmt(m_num_dushed_houses)).draw(0, 0, Palette::Black);
+    m_score_font(U"\nokindex: {}"_fmt(okHouseIndex)).draw(0, 0, Palette::Black);
 
     m_house_x = WIDTH_X + HOUSE_SIZE - static_cast<long>(300 * m_house_spd * stopwatch.sF()) % (WIDTH_X + 2 * HOUSE_SIZE);
 
