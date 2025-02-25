@@ -108,6 +108,7 @@ int Game::gameOverScreen()
         srand(0);
 
         setNumHouse(2);
+        setNGHouse();
 
         stopwatch.restart();
         m_num_dushed_houses = 0;
@@ -117,6 +118,7 @@ int Game::gameOverScreen()
     if (SimpleGUI::Button(U"Finish", Vec2{ WIDTH_X - 200, 500 }, 100))
     {
         setNumHouse(2);
+        setNGHouse();
 
         stopwatch.restart();
         m_num_dushed_houses = 0;
