@@ -10,13 +10,13 @@ void Main()
     Scene::SetBackground(ColorF{ SKY_BLUE });   // 背景色の設定
        
     Game game;                                  // ゲーム画面
+    int num_house = 2;                          // 一度に出現する家の数
     int game_state = 0;                         // 今のゲームの状態
-    int num_dushed_houses = 0;                  // ピンポンダッシュに成功した家の数
 
-    game.setNumHouse(2);
+    srand((unsigned int)time(nullptr));
 
     while (System::Update())
-    { 
+    {
         switch(game_state)
         {
         case TITLE_SCREEN:
@@ -25,6 +25,10 @@ void Main()
 
         case GAME_SCREEN:
             game_state = game.mainScreen();
+            break;
+
+        case GAME_OVER_SCREEN:
+            game_state = game.gameOverScreen();
             break;
         }
     }
