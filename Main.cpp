@@ -12,8 +12,6 @@ void Main()
     Game game;                                  // ゲーム画面
     int game_state = 0;                         // 今のゲームの状態
 
-    srand(0);
-
     while (System::Update())
     {
         switch(game_state)

@@ -1,9 +1,6 @@
 ﻿#ifndef GAME_H
 #define GAME_H
 
-#include <time.h>
-#include <random>
-
 #include <Siv3D.hpp>
 
 #include "core.h"
@@ -17,22 +14,46 @@ private:
 	bool m_is_pinponed = false;											// インターフォンが押されたかどうか
 	int m_num_house = 2;												// 一度に出現する家の数
 	int m_num_dushed_houses = 0;										// ピンポンダッシュに成功した家の数
-	int okHouseIndex = 0;												// ピンポンダッシュ可能な家の番号
+	int successful_house_index = 0;										// ピンポンダッシュ可能な家の番号
 	double m_house_x;													// 家のx座標
 	double m_house_spd = 1.0;											// 家の移動速度
 	const Font m_font{ 60, Typeface::Heavy };							// リザルト画面に表示するフォント
 	const Font m_score_font{ 30, Typeface::Heavy };						// スコアの表示に使用するフォント
 	const Texture m_house{ U"🏠"_emoji };								// 家の絵文字
 	const Font m_font_MSDF{ FontMethod::MSDF, 10, Typeface::Heavy };	// 成功したかどうかを知らせるフォント
-	Stopwatch stopwatch{ StartImmediately::Yes };						// 時間計測
-	Stopwatch test_stopwatch{ StartImmediately::Yes };
+	Stopwatch m_house_pos_param{ StartImmediately::Yes };						// 時間計測
+	Stopwatch m_font_size_param{ StartImmediately::Yes };
 	House m_house_buttons[100];											// 家
+	const String m_title_str = U"ピンポンダッシュ  \n  チャレンジ!!";	// タイトルの表示をするための文字
+	const String m_change_house_button_label = U"デザイン変更";			// デザイン変更ボタンのラベル
+	const String m_retry_button_label = U"リトライ";					// リトライボタンのラベル
+	const String m_clear_str = U"クリア！";								// 成功したときに出す文字列
+	const String m_title_button_label = U"タイトル";					// タイトルボタンのラベル
+	const String m_failure_str = U"だめやん…";							// 失敗したときに出す文字列
 
-public:
-	void setNGHouse();
+	/// <summary>
+	/// ピンポンダッシュに成功する家のインデックスを設定する
+	/// </summary>
+	void setSuccessfulHouse();
 
+	/// <summary>
+	/// 家の数を増やす
+	/// </summary>
+	void incrHouse();
+
+	/// <summary>
+	/// ピンポンダッシュに失敗したかどうか
+	/// </summary>
+	/// <returns>失敗したらtrue，成功したらfalse</returns>
+	bool failurePinponDush();
+
+	/// <summary>
+	/// 文字列が飛び出してくる関数
+	/// </summary>
+	/// <param name="str">飛び出させたい文字列</param>
 	void jumpOutStr(const String str);
 
+public:
 	/// <summary>
 	/// タイトル画面の描画
 	/// </summary>

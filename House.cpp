@@ -40,6 +40,8 @@ bool House::isClicked(const bool canClick)
 		{
 			return true;
 		}
+
+		RectF{ m_x - 60, m_y - 30, HOUSE_SIZE, HOUSE_SIZE }.draw(ColorF{ SKY_BLUE });
 	}
 
 	m_house.resized(HOUSE_SIZE).drawAt(Vec2{ m_x, m_y });
