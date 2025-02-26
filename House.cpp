@@ -2,7 +2,7 @@
 
 void House::setDesign()
 {
-	m_house_label = Random(2);
+	m_house_label = Random(4);
 
 	if (m_house_label == 0)
 	{
@@ -15,6 +15,14 @@ void House::setDesign()
 	else if (m_house_label == 2)
 	{
 		m_house = Texture{ U"🏡"_emoji };
+	}
+	else if (m_house_label == 3)
+	{
+		m_house = Texture{ U"🏚️"_emoji };
+	}
+	else if (m_house_label == 4)
+	{
+		m_house = Texture{ U"🛖"_emoji };
 	}
 }
 

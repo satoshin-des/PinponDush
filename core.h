@@ -11,6 +11,7 @@
 #define GAME_SCREEN 1
 #define GAME_OVER_SCREEN -1
 #define OPTION_SCREEN 2
+#define RULE_SCREEN 3
 
 #define SKY_BLUE 0.8, 0.9, 1.0
 

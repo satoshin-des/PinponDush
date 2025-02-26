@@ -70,12 +70,7 @@ bool Game::failurePinponDush()
     return false;
 }
 
-void Game::jumpOutStr(const String str)
-{
-    m_font_MSDF(str).drawAt(std::min(std::pow(10 * m_font_size_param.sF(), 2.0), 100.0), Scene::Center(), Palette::Red);
-}
-
-int Game::titleScreen()
+void Game::moveBackGroundHouse()
 {
     m_house_x = WIDTH_X + HOUSE_SIZE - 300 * m_house_spd * m_house_pos_param.sF();
 
@@ -85,27 +80,44 @@ int Game::titleScreen()
     m_house_buttons[0].isClicked(false);
     m_house_buttons[1].isClicked(false);
 
+    if (m_house_x <= -HOUSE_SIZE)
+    {
+        m_house_pos_param.restart();
+    }
+}
+
+void Game::jumpOutStr(const String str)
+{
+    m_font_MSDF(str).drawAt(std::min(std::pow(10 * m_font_size_param.sF(), 2.0), 100.0), Scene::Center(), Palette::Red);
+}
+
+int Game::titleScreen()
+{
+    moveBackGroundHouse();
+
     m_font(m_title_str).drawAt(Scene::Center(), Palette::Black);
 
-    if (SimpleGUI::Button(U"Start", Vec2{ 100, 500 }, 100))
+    if (SimpleGUI::Button(m_start_button, Vec2{ 100, 500 }, 100))
     {
-        srand(0);
+        Reseed(0);
+        setSuccessfulHouse();
 
         m_house_pos_param.restart();
         return GAME_SCREEN;
     }
 
-    if (SimpleGUI::Button(U"Option", Vec2{ WIDTH_X - 200, 500 }, 100))
+    if (SimpleGUI::Button(m_rule_button, Vec2{ WIDTH_X_HALF - 50, 500 }, 100))
+    {
+        m_house_pos_param.restart();
+        return RULE_SCREEN;
+    }
+
+    if (SimpleGUI::Button(m_option_button, Vec2{ WIDTH_X - 200, 500 }, 100))
     {
         m_house_pos_param.restart();
         return OPTION_SCREEN;
     }
-
-    if (m_house_x <= -HOUSE_SIZE)
-    {
-        m_house_pos_param.restart();
-    }
-
+    
 	return TITLE_SCREEN;
 }
 
@@ -128,20 +140,16 @@ int Game::mainScreen()
 
 int Game::gameOverScreen()
 {
-    m_house_x = WIDTH_X + HOUSE_SIZE - 300 * m_house_spd * m_house_pos_param.sF();
-
-    // ‰Æ‚Ì•\Ž¦
-    m_house_buttons[0].setPos(m_house_x, WIDTH_Y_HALF + HOUSE_SIZE);
-    m_house_buttons[1].setPos(m_house_x, WIDTH_Y_HALF - HOUSE_SIZE);
-    m_house_buttons[0].isClicked(false);
-    m_house_buttons[1].isClicked(false);
+    moveBackGroundHouse();
 
     jumpOutStr(m_failure_str);
-    m_font(U"Score:{}"_fmt(m_num_dushed_houses)).drawAt(Scene::Center(), Palette::Black);
+
+    m_font(U"Score:{}"_fmt(m_num_dushed_houses)).drawAt(Vec2{ WIDTH_X_HALF, 50 }, Palette::Black);
 
     if (SimpleGUI::Button(m_retry_button_label, Vec2{ 100, 500 }, 100))
     {
-        srand(0);
+        Reseed(0);
+        setSuccessfulHouse();
 
         m_house_pos_param.restart();
         m_num_dushed_houses = 0;
@@ -155,23 +163,12 @@ int Game::gameOverScreen()
         return TITLE_SCREEN;
     }
 
-    if (m_house_x <= -HOUSE_SIZE)
-    {
-        m_house_pos_param.restart();
-    }
-
     return GAME_OVER_SCREEN;
 }
 
 int Game::optionScreen()
 {
-    m_house_x = WIDTH_X + HOUSE_SIZE - static_cast<long>(300 * m_house_spd * m_house_pos_param.sF()) % (WIDTH_X + 2 * HOUSE_SIZE);
-
-    // ‰Æ‚Ì•\Ž¦
-    m_house_buttons[0].setPos(m_house_x, WIDTH_Y_HALF + HOUSE_SIZE);
-    m_house_buttons[1].setPos(m_house_x, WIDTH_Y_HALF - HOUSE_SIZE);
-    m_house_buttons[0].isClicked(false);
-    m_house_buttons[1].isClicked(false);
+    moveBackGroundHouse();
 
     m_font(m_title_str).drawAt(Scene::Center(), Palette::Black);
 
@@ -193,4 +190,19 @@ int Game::optionScreen()
     }
 
     return OPTION_SCREEN;
+}
+
+int Game::ruleScreen()
+{
+    moveBackGroundHouse();
+
+    m_score_font(m_rule_str).drawAt(Scene::Center(), Palette::Black);
+
+    if (SimpleGUI::Button(m_title_button_label, Vec2{ WIDTH_X_HALF, 500 }, 100))
+    {
+        m_house_pos_param.restart();
+        return TITLE_SCREEN;
+    }
+
+    return RULE_SCREEN;
 }
