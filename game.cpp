@@ -127,6 +127,8 @@ int Game::mainScreen()
     
     if (failurePinponDush())
     {
+        m_game_over_bgm.play();
+
         return GAME_OVER_SCREEN;
     }
     
@@ -148,6 +150,8 @@ int Game::gameOverScreen()
 
     if (SimpleGUI::Button(m_retry_button_label, Vec2{ 100, 500 }, 100))
     {
+        m_game_over_bgm.stop();
+
         Reseed(0);
         setSuccessfulHouse();
 
@@ -158,6 +162,8 @@ int Game::gameOverScreen()
 
     if (SimpleGUI::Button(m_title_button_label, Vec2{ WIDTH_X - 200, 500 }, 100))
     {
+        m_game_over_bgm.stop();
+
         m_house_pos_param.restart();
         m_num_dushed_houses = 0;
         return TITLE_SCREEN;

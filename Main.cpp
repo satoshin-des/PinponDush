@@ -13,9 +13,23 @@ void Main()
     int game_state = 0;                         // 今のゲームの状態
 
     Reseed(0);
+    
+    const Audio m_game_over_bgm{ Audio::Stream, GAME_OVER_BGM, Loop::Yes };
+    m_game_over_bgm.play();
+
+    Console << U"ggggggggggggggggggggggggggggg";
+    for (const auto& path : EnumResourceFiles())
+    {
+        Console << path;
+    }
 
     while (System::Update())
     {
+        ClearPrint();
+        Print << m_game_over_bgm.isPlaying();
+        Print << m_game_over_bgm.isEmpty();
+        Print << m_game_over_bgm.getVolume();
+
         switch(game_state)
         {
         case TITLE_SCREEN:
