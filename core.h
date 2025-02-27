@@ -7,7 +7,7 @@
 #define WIDTH_Y_HALF 300
 #define HOUSE_SIZE 150
 
-#define GAME_OVER_BGM U"resources/engine/03.wav"
+#define GAME_OVER_BGM U"bgm/03.wav"
 
 #define TITLE_SCREEN 0
 #define GAME_SCREEN 1
