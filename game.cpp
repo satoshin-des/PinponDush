@@ -7,7 +7,7 @@ void Game::setSuccessfulHouse()
 
 void Game::incrHouse()
 {
-    if (m_num_dushed_houses % 3 == 0)
+    if (m_score % 3 == 0)
     {
         m_num_house = std::min(m_num_house + 1, 100);
     }
@@ -25,7 +25,7 @@ bool Game::failurePinponDush()
         {
             if (i == successful_house_index)
             {
-                ++m_num_dushed_houses;
+                m_score += static_cast<int>(m_house_spd);
 
                 incrHouse();
 
@@ -133,7 +133,7 @@ int Game::titleScreen()
 
 int Game::mainScreen()
 {   
-    m_score_font(U"Score: {}"_fmt(m_num_dushed_houses)).draw(0, 0, Palette::Black);
+    m_score_font(U"Score: {}"_fmt(m_score)).draw(0, 0, Palette::Black);
     
     if (failurePinponDush())
     {
@@ -157,7 +157,7 @@ int Game::gameOverScreen()
 
     jumpOutStr(m_failure_str);
 
-    m_font(U"Score:{}"_fmt(m_num_dushed_houses)).drawAt(Vec2{ WIDTH_X_HALF, 50 }, Palette::Black);
+    m_font(U"Score:{}"_fmt(m_score)).drawAt(Vec2{ WIDTH_X_HALF, 50 }, Palette::Black);
 
     if (SimpleGUI::Button(m_retry_button_label, Vec2{ 100, 500 }, 100))
     {
@@ -167,7 +167,7 @@ int Game::gameOverScreen()
         setSuccessfulHouse();
 
         m_house_pos_param.restart();
-        m_num_dushed_houses = 0;
+        m_score = 0;
         return GAME_SCREEN;
     }
 
@@ -176,7 +176,7 @@ int Game::gameOverScreen()
         m_game_over_bgm.stop();
 
         m_house_pos_param.restart();
-        m_num_dushed_houses = 0;
+        m_score = 0;
         return TITLE_SCREEN;
     }
 
@@ -190,9 +190,16 @@ int Game::optionScreen()
     m_font(m_title_str).drawAt(Scene::Center(), Palette::Black);
 
     // â∆ÇÃìÆÇ≠ë¨ìxÇÃí≤êÆ
-    SimpleGUI::Slider(U"{:.2f}"_fmt(m_house_spd), m_house_spd, 1.0, 10.0, Vec2{ 200, 40 }, 80, 150);
+    SimpleGUI::Slider(m_speed_str + U": {:.2f}"_fmt(m_house_spd), m_house_spd, 1.0, 10.0, Vec2{ 200, 40 }, 100, 150);
 
-    if (SimpleGUI::Button(m_change_house_button_label, Vec2{200, 120}))
+    if (SimpleGUI::Slider(m_volume_str + U": {:.2f}"_fmt(m_volume), m_volume, Vec2{ 200, 100 }, 100, 150))
+    {
+        m_main_bgm.setVolume(m_volume);
+        m_title_bgm.setVolume(m_volume);
+        m_game_over_bgm.setVolume(m_volume);
+    }
+
+    if (SimpleGUI::Button(m_change_house_button_label, Vec2{200, 160}))
     {
         for (int i = 0; i < 100; ++i)
         {

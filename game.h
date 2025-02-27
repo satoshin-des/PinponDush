@@ -11,8 +11,9 @@ class Game
 private:
 	bool m_is_pinponed = false;											// インターフォンが押されたかどうか
 	int m_num_house = 2;												// 一度に出現する家の数
-	int m_num_dushed_houses = 0;										// ピンポンダッシュに成功した家の数
+	int m_score = 0;													// ピンポンダッシュに成功した家の数
 	int successful_house_index = 0;										// ピンポンダッシュ可能な家の番号
+	double m_volume = 1.0;												// 音楽のボリューム
 	double m_house_x;													// 家のx座標
 	double m_house_spd = 1.0;											// 家の移動速度
 	const Font m_font{ 60, Typeface::Heavy };							// リザルト画面に表示するフォント
@@ -25,6 +26,8 @@ private:
 	const Audio m_game_over_bgm{ Audio::Stream, GAME_OVER_BGM, Loop::Yes };
 	const Audio m_title_bgm{ Audio::Stream, TITLE_BGM, Loop::Yes };
 	const Audio m_main_bgm{ Audio::Stream, MAIN_BGM, Loop::Yes };
+	const String m_volume_str = U"音量";
+	const String m_speed_str = U"速度";
 	const String m_title_str = U"ピンポンダッシュ  \n  チャレンジ!!";	// タイトルの表示をするための文字
 	const String m_change_house_button_label = U"デザイン変更";			// デザイン変更ボタンのラベル
 	const String m_retry_button_label = U"リトライ";					// リトライボタンのラベル
