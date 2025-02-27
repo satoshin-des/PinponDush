@@ -105,6 +105,7 @@ int Game::titleScreen()
     if (SimpleGUI::Button(m_start_button, Vec2{ 100, 500 }, 100))
     {
         m_title_bgm.stop();
+        m_main_bgm.play();
 
         Reseed(0);
         setSuccessfulHouse();
@@ -136,6 +137,7 @@ int Game::mainScreen()
     
     if (failurePinponDush())
     {
+        m_main_bgm.stop();
         m_game_over_bgm.play();
 
         return GAME_OVER_SCREEN;

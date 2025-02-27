@@ -86,25 +86,9 @@
   <ItemGroup>
     <None Include="bgm\03.wav" />
     <None Include="bgm\01.wav" />
-    <None Include="resources\engine\font\fontawesome\LICENSE.txt" />
-    <None Include="resources\engine\font\fontawesome\fontawesome-brands.otf.zstdcmp" />
-    <None Include="resources\engine\font\fontawesome\fontawesome-solid.otf.zstdcmp" />
-    <None Include="resources\engine\font\materialdesignicons\LICENSE" />
-    <None Include="resources\engine\font\materialdesignicons\license.md" />
-    <None Include="resources\engine\font\materialdesignicons\materialdesignicons-webfont.ttf.zstdcmp" />
+    <None Include="bgm\02.wav" />
     <None Include="resources\engine\font\min\LICENSE" />
     <None Include="resources\engine\font\min\siv3d-min.woff" />
-    <None Include="resources\engine\font\mplus\LICENSE_E" />
-    <None Include="resources\engine\font\mplus\mplus-1p-black.ttf.zstdcmp" />
-    <None Include="resources\engine\font\mplus\mplus-1p-bold.ttf.zstdcmp" />
-    <None Include="resources\engine\font\mplus\mplus-1p-heavy.ttf.zstdcmp" />
-    <None Include="resources\engine\font\mplus\mplus-1p-light.ttf.zstdcmp" />
-    <None Include="resources\engine\font\mplus\mplus-1p-medium.ttf.zstdcmp" />
-    <None Include="resources\engine\font\mplus\mplus-1p-regular.ttf.zstdcmp" />
-    <None Include="resources\engine\font\mplus\mplus-1p-thin.ttf.zstdcmp" />
-    <None Include="resources\engine\font\noto-cjk\LICENSE" />
-    <None Include="resources\engine\font\noto-cjk\NotoSansCJK-Regular.ttc.zstdcmp" />
-    <None Include="resources\engine\font\noto-cjk\NotoSansJP-Regular.otf.zstdcmp" />
     <None Include="resources\engine\font\noto-emoji\LICENSE" />
     <None Include="resources\engine\font\noto-emoji\NotoColorEmoji.ttf.zstdcmp" />
     <None Include="resources\engine\font\noto-emoji\NotoEmoji-Regular.ttf.zstdcmp" />
@@ -167,8 +151,6 @@
     <None Include="resources\engine\shader\wgsl\sprite.vert.wgsl" />
     <None Include="resources\engine\shader\wgsl\square_dot.frag.wgsl" />
     <None Include="resources\engine\shader\wgsl\texture.frag.wgsl" />
-    <None Include="resources\engine\soundfont\GMGSx.sf2.txt" />
-    <None Include="resources\engine\soundfont\GMGSx.sf2.zstdcmp" />
     <None Include="resources\engine\texture\box-shadow\128.png" />
     <None Include="resources\engine\texture\box-shadow\16.png" />
     <None Include="resources\engine\texture\box-shadow\256.png" />
@@ -186,6 +168,7 @@
     <ClInclude Include="house.h" />
   </ItemGroup>
   <ItemGroup>
+    <Media Include="bgm\02.wav" />
     <Media Include="bgm\03.wav" />
     <Media Include="resources\engine\03.wav" />
   </ItemGroup>

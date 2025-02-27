@@ -19,20 +19,8 @@
     <Filter Include="Resource Files\resources\engine\font">
       <UniqueIdentifier>{cefaaac3-ad1e-4bd4-9dd8-5c07a83d87ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\resources\engine\font\fontawesome">
-      <UniqueIdentifier>{b225c3d5-d944-4aa2-886e-83b0d31b01ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\resources\engine\font\materialdesignicons">
-      <UniqueIdentifier>{8a1f1d1a-ce46-467d-abc7-7501efe424ca}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files\resources\engine\font\min">
       <UniqueIdentifier>{9afa93B8-5264-4e11-a2a9-ecec79805d7d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\resources\engine\font\mplus">
-      <UniqueIdentifier>{241845be-6dc4-4154-8141-a041e611de50}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\resources\engine\font\noto-cjk">
-      <UniqueIdentifier>{8599567d-54b6-4e8e-884c-a3756af759ce}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files\resources\engine\font\noto-emoji">
       <UniqueIdentifier>{ca61c725-93a0-49d4-94b2-52e6aac4ca06}</UniqueIdentifier>
@@ -45,9 +33,6 @@
     </Filter>
     <Filter Include="Resource Files\resources\engine\shader\wgsl">
       <UniqueIdentifier>{b6fc9618-dffa-452c-9ce5-a436a93b6bed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files\resources\engine\soundfont">
-      <UniqueIdentifier>{03541687-8e47-416b-a90e-e97ccb289eb5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files\resources\engine\texture">
       <UniqueIdentifier>{c45638f7-8621-4616-9a57-22f0da783fd1}</UniqueIdentifier>
@@ -66,62 +51,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\engine\font\fontawesome\LICENSE.txt">
-      <Filter>Resource Files\resources\engine\font\fontawesome</Filter>
-    </None>
-    <None Include="resources\engine\font\fontawesome\fontawesome-brands.otf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\fontawesome</Filter>
-    </None>
-    <None Include="resources\engine\font\fontawesome\fontawesome-solid.otf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\fontawesome</Filter>
-    </None>
-    <None Include="resources\engine\font\materialdesignicons\LICENSE">
-      <Filter>Resource Files\resources\engine\font\materialdesignicons</Filter>
-    </None>
-    <None Include="resources\engine\font\materialdesignicons\license.md">
-      <Filter>Resource Files\resources\engine\font\materialdesignicons</Filter>
-    </None>
-    <None Include="resources\engine\font\materialdesignicons\materialdesignicons-webfont.ttf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\materialdesignicons</Filter>
-    </None>
     <None Include="resources\engine\font\min\LICENSE">
       <Filter>Resource Files\resources\engine\font\min</Filter>
     </None>
     <None Include="resources\engine\font\min\siv3d-min.woff">
       <Filter>Resource Files\resources\engine\font\min</Filter>
-    </None>
-    <None Include="resources\engine\font\mplus\LICENSE_E">
-      <Filter>Resource Files\resources\engine\font\mplus</Filter>
-    </None>
-    <None Include="resources\engine\font\mplus\mplus-1p-black.ttf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\mplus</Filter>
-    </None>
-    <None Include="resources\engine\font\mplus\mplus-1p-bold.ttf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\mplus</Filter>
-    </None>
-    <None Include="resources\engine\font\mplus\mplus-1p-heavy.ttf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\mplus</Filter>
-    </None>
-    <None Include="resources\engine\font\mplus\mplus-1p-light.ttf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\mplus</Filter>
-    </None>
-    <None Include="resources\engine\font\mplus\mplus-1p-medium.ttf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\mplus</Filter>
-    </None>
-    <None Include="resources\engine\font\mplus\mplus-1p-regular.ttf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\mplus</Filter>
-    </None>
-    <None Include="resources\engine\font\mplus\mplus-1p-thin.ttf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\mplus</Filter>
-    </None>
-    <None Include="resources\engine\font\noto-cjk\LICENSE">
-      <Filter>Resource Files\resources\engine\font\noto-cjk</Filter>
-    </None>
-    <None Include="resources\engine\font\noto-cjk\NotoSansCJK-Regular.ttc.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\noto-cjk</Filter>
-    </None>
-    <None Include="resources\engine\font\noto-cjk\NotoSansJP-Regular.otf.zstdcmp">
-      <Filter>Resource Files\resources\engine\font\noto-cjk</Filter>
     </None>
     <None Include="resources\engine\font\noto-emoji\LICENSE">
       <Filter>Resource Files\resources\engine\font\noto-emoji</Filter>
@@ -309,12 +243,6 @@
     <None Include="resources\engine\shader\wgsl\texture.frag.wgsl">
       <Filter>Resource Files\resources\engine\shader\wgsl</Filter>
     </None>
-    <None Include="resources\engine\soundfont\GMGSx.sf2.txt">
-      <Filter>Resource Files\resources\engine\soundfont</Filter>
-    </None>
-    <None Include="resources\engine\soundfont\GMGSx.sf2.zstdcmp">
-      <Filter>Resource Files\resources\engine\soundfont</Filter>
-    </None>
     <None Include="resources\engine\texture\box-shadow\128.png">
       <Filter>Resource Files\resources\engine\texture\box-shadow</Filter>
     </None>
@@ -333,132 +261,9 @@
     <None Include="resources\engine\texture\box-shadow\8.png">
       <Filter>Resource Files\resources\engine\texture\box-shadow</Filter>
     </None>
-    <None Include="example\LICENSE.txt" />
-    <None Include="example\bay.jpg" />
-    <None Include="example\csv\config.csv" />
-    <None Include="example\font\DotGothic16\DotGothic16-Regular.ttf" />
-    <None Include="example\font\DotGothic16\OFL.txt" />
-    <None Include="example\font\DotGothic16\README-JP.md" />
-    <None Include="example\font\DotGothic16\README.md" />
-    <None Include="example\font\RocknRoll\OFL.txt" />
-    <None Include="example\font\RocknRoll\README-JP.md" />
-    <None Include="example\font\RocknRoll\README.md" />
-    <None Include="example\font\RocknRoll\RocknRollOne-Regular.ttf" />
-    <None Include="example\geojson\countries.geojson" />
-    <None Include="example\gif\test.gif" />
-    <None Include="example\ini\config.ini" />
-    <None Include="example\json\config.json" />
-    <None Include="example\json\empty.json" />
-    <None Include="example\json\invalid-blank.json" />
-    <None Include="example\json\invalid-syntax.json" />
-    <None Include="example\json\test.json" />
-    <None Include="example\midi\test.mid" />
-    <None Include="example\midi\test.txt" />
-    <None Include="example\obj\bark.jpg" />
-    <None Include="example\obj\blacksmith.mtl" />
-    <None Include="example\obj\blacksmith.obj" />
-    <None Include="example\obj\credit.txt" />
-    <None Include="example\obj\crystal1.mtl" />
-    <None Include="example\obj\crystal1.obj" />
-    <None Include="example\obj\crystal2.mtl" />
-    <None Include="example\obj\crystal2.obj" />
-    <None Include="example\obj\crystal3.mtl" />
-    <None Include="example\obj\crystal3.obj" />
-    <None Include="example\obj\leaves.png" />
-    <None Include="example\obj\mill.mtl" />
-    <None Include="example\obj\mill.obj" />
-    <None Include="example\obj\pine.mtl" />
-    <None Include="example\obj\pine.obj" />
-    <None Include="example\obj\pine_leaves_red.png" />
-    <None Include="example\obj\siv3d-kun-eye.png" />
-    <None Include="example\obj\siv3d-kun.mtl" />
-    <None Include="example\obj\siv3d-kun.obj" />
-    <None Include="example\obj\siv3d-kun.png" />
-    <None Include="example\obj\tree.mtl" />
-    <None Include="example\obj\tree.obj" />
-    <None Include="example\objdetect\haarcascade\eye.xml" />
-    <None Include="example\objdetect\haarcascade\face_anime.xml" />
-    <None Include="example\objdetect\haarcascade\frontal_catface.xml" />
-    <None Include="example\objdetect\haarcascade\frontal_face_alt2.xml" />
-    <None Include="example\particle.png" />
-    <None Include="example\script\breakout.as" />
-    <None Include="example\script\hello.as" />
-    <None Include="example\script\paint.as" />
-    <None Include="example\script\piano.as" />
-    <None Include="example\script\test.as" />
-    <None Include="example\shader\essl\default2d.vert" />
-    <None Include="example\shader\essl\default2d_shape.frag" />
-    <None Include="example\shader\essl\default2d_texture.frag" />
-    <None Include="example\shader\essl\default3d_forward.frag" />
-    <None Include="example\shader\essl\default3d_forward.vert" />
-    <None Include="example\shader\essl\extract_bright_linear.frag" />
-    <None Include="example\shader\essl\forward_fog.frag" />
-    <None Include="example\shader\essl\forward_triplanar.frag" />
-    <None Include="example\shader\essl\game_of_life.frag" />
-    <None Include="example\shader\essl\grayscale.frag" />
-    <None Include="example\shader\essl\homography.frag" />
-    <None Include="example\shader\essl\homography.vert" />
-    <None Include="example\shader\essl\multi_texture_blend.frag" />
-    <None Include="example\shader\essl\multi_texture_mask.frag" />
-    <None Include="example\shader\essl\poisson_disk.frag" />
-    <None Include="example\shader\essl\posterize.frag" />
-    <None Include="example\shader\essl\rgb_shift.frag" />
-    <None Include="example\shader\essl\rgb_to_bgr.frag" />
-    <None Include="example\shader\essl\soft_shape.vert" />
-    <None Include="example\shader\essl\swirl.frag" />
-    <None Include="example\shader\essl\terrain_forward.frag" />
-    <None Include="example\shader\essl\terrain_forward.vert" />
-    <None Include="example\shader\essl\terrain_normal.frag" />
-    <None Include="example\shader\wgsl\default2d.vert.wgsl" />
-    <None Include="example\shader\wgsl\default2d_shape.frag.wgsl" />
-    <None Include="example\shader\wgsl\default2d_texture.frag.wgsl" />
-    <None Include="example\shader\wgsl\default3d_forward.frag.wgsl" />
-    <None Include="example\shader\wgsl\default3d_forward.vert.wgsl" />
-    <None Include="example\shader\wgsl\extract_bright_linear.frag.wgsl" />
-    <None Include="example\shader\wgsl\forward_fog.frag.wgsl" />
-    <None Include="example\shader\wgsl\forward_triplanar.frag.wgsl" />
-    <None Include="example\shader\wgsl\game_of_life.frag.wgsl" />
-    <None Include="example\shader\wgsl\grayscale.frag.wgsl" />
-    <None Include="example\shader\wgsl\homography.frag.wgsl" />
-    <None Include="example\shader\wgsl\homography.vert.wgsl" />
-    <None Include="example\shader\wgsl\multi_texture_blend.frag.wgsl" />
-    <None Include="example\shader\wgsl\multi_texture_mask.frag.wgsl" />
-    <None Include="example\shader\wgsl\poisson_disk.frag.wgsl" />
-    <None Include="example\shader\wgsl\posterize.frag.wgsl" />
-    <None Include="example\shader\wgsl\rgb_shift.frag.wgsl" />
-    <None Include="example\shader\wgsl\rgb_to_bgr.frag.wgsl" />
-    <None Include="example\shader\wgsl\soft_shape.vert.wgsl" />
-    <None Include="example\shader\wgsl\swirl.frag.wgsl" />
-    <None Include="example\shader\wgsl\terrain_forward.frag.wgsl" />
-    <None Include="example\shader\wgsl\terrain_forward.vert.wgsl" />
-    <None Include="example\shader\wgsl\terrain_normal.frag.wgsl" />
-    <None Include="example\shot.mp3" />
-    <None Include="example\siv3d-kun.png" />
-    <None Include="example\spritesheet\siv3d-kun-16.png" />
-    <None Include="example\spritesheet\siv3d-kun-16.txt" />
-    <None Include="example\svg\README.txt" />
-    <None Include="example\svg\cat.svg" />
-    <None Include="example\svg\turtle.svg" />
-    <None Include="example\test.mp3" />
-    <None Include="example\texture\credit.txt" />
-    <None Include="example\texture\earth.jpg" />
-    <None Include="example\texture\grass.jpg" />
-    <None Include="example\texture\ground.jpg" />
-    <None Include="example\texture\rock.jpg" />
-    <None Include="example\texture\uv.png" />
-    <None Include="example\texture\wood.jpg" />
-    <None Include="example\toml\config.toml" />
-    <None Include="example\toml\test.toml" />
-    <None Include="example\txt\en.txt" />
-    <None Include="example\txt\jp.txt" />
-    <None Include="example\txt\kr.txt" />
-    <None Include="example\txt\sc.txt" />
-    <None Include="example\video\river.mp4" />
-    <None Include="example\video\river.txt" />
-    <None Include="example\windmill.png" />
-    <None Include="example\xml\config.xml" />
-    <None Include="example\xml\test.xml" />
-    <None Include="example\zip\zip_test.zip" />
+    <None Include="bgm\03.wav" />
+    <None Include="bgm\01.wav" />
+    <None Include="bgm\02.wav" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Templates\Embeddable\web-player.html">
@@ -492,6 +297,10 @@
   </ItemGroup>
   <ItemGroup>
     <Media Include="bgm\03.wav">
+      <Filter>Resource Files\bgm</Filter>
+    </Media>
+    <Media Include="resources\engine\03.wav" />
+    <Media Include="bgm\02.wav">
       <Filter>Resource Files\bgm</Filter>
     </Media>
   </ItemGroup>

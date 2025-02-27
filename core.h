@@ -9,6 +9,7 @@
 
 #define TITLE_BGM U"bgm/01.wav"
 #define GAME_OVER_BGM U"bgm/03.wav"
+#define MAIN_BGM U"bgm/02.wav"
 
 #define TITLE_SCREEN 0
 #define GAME_SCREEN 1

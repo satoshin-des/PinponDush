@@ -24,6 +24,7 @@ private:
 	House m_house_buttons[100];											// 家
 	const Audio m_game_over_bgm{ Audio::Stream, GAME_OVER_BGM, Loop::Yes };
 	const Audio m_title_bgm{ Audio::Stream, TITLE_BGM, Loop::Yes };
+	const Audio m_main_bgm{ Audio::Stream, MAIN_BGM, Loop::Yes };
 	const String m_title_str = U"ピンポンダッシュ  \n  チャレンジ!!";	// タイトルの表示をするための文字
 	const String m_change_house_button_label = U"デザイン変更";			// デザイン変更ボタンのラベル
 	const String m_retry_button_label = U"リトライ";					// リトライボタンのラベル
