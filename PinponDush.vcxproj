@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bgm\03.wav" />
+    <None Include="bgm\01.wav" />
     <None Include="resources\engine\font\fontawesome\LICENSE.txt" />
     <None Include="resources\engine\font\fontawesome\fontawesome-brands.otf.zstdcmp" />
     <None Include="resources\engine\font\fontawesome\fontawesome-solid.otf.zstdcmp" />

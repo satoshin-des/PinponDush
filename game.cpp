@@ -93,12 +93,19 @@ void Game::jumpOutStr(const String str)
 
 int Game::titleScreen()
 {
+    if (!m_title_bgm.isPlaying())
+    {
+        m_title_bgm.play();
+    }
+
     moveBackGroundHouse();
 
     m_font(m_title_str).drawAt(Scene::Center(), Palette::Black);
 
     if (SimpleGUI::Button(m_start_button, Vec2{ 100, 500 }, 100))
     {
+        m_title_bgm.stop();
+
         Reseed(0);
         setSuccessfulHouse();
 
@@ -108,6 +115,8 @@ int Game::titleScreen()
 
     if (SimpleGUI::Button(m_rule_button, Vec2{ WIDTH_X_HALF - 50, 500 }, 100))
     {
+        m_title_bgm.stop();
+
         m_house_pos_param.restart();
         return RULE_SCREEN;
     }
