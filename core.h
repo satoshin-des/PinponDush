@@ -17,6 +17,8 @@
 #define OPTION_SCREEN 2
 #define RULE_SCREEN 3
 
+#define MAX_NUM_HOUSE 8
+
 #define SKY_BLUE 0.8, 0.9, 1.0
 
 #endif // !CORE_H

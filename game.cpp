@@ -9,7 +9,7 @@ void Game::incrHouse()
 {
     if (m_score % 3 == 0)
     {
-        m_num_house = std::min(m_num_house + 1, 100);
+        m_num_house = std::min(m_num_house + 1, MAX_NUM_HOUSE);
     }
 }
 
@@ -19,7 +19,7 @@ bool Game::failurePinponDush()
 
     for (int i = 0; i < m_num_house; ++i)
     {
-        m_house_buttons[i].setPos(m_house_x, (i + 1.0) * WIDTH_X / (2 * m_num_house));
+        m_house_buttons[i].setPos(m_house_x, (2 * i + 1.0) * (WIDTH_Y) / (2 * m_num_house));
 
         if (m_house_buttons[i].isClicked(true) && (!m_is_pinponed))
         {
@@ -162,6 +162,7 @@ int Game::gameOverScreen()
     if (SimpleGUI::Button(m_retry_button_label, Vec2{ 100, 500 }, 100))
     {
         m_game_over_bgm.stop();
+        m_main_bgm.play();
 
         Reseed(0);
         setSuccessfulHouse();
