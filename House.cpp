@@ -1,8 +1,10 @@
 ﻿#include "house.h"
 
-void House::setDesign()
+#include "core.h"
+
+void House::changeDesign()
 {
-	m_house_label = Random(4);
+	m_house_label = rand() % 7;
 
 	if (m_house_label == 0)
 	{
@@ -23,6 +25,14 @@ void House::setDesign()
 	else if (m_house_label == 4)
 	{
 		m_house = Texture{ U"🛖"_emoji };
+	}
+	else if (m_house_label == 5)
+	{
+		m_house = Texture{ U"⛺️"_emoji };
+	}
+	else if (m_house_label == 6)
+	{
+		m_house = Texture{ U"⛪"_emoji };
 	}
 }
 

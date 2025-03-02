@@ -21,4 +21,7 @@
 
 #define SKY_BLUE 0.8, 0.9, 1.0
 
+#define CAN_CLICK true
+#define CANNOT_CLICK false
+
 #endif // !CORE_H

@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <time.h>
+
 # include <Siv3D.hpp>
 
 #include "core.h"
@@ -12,6 +15,7 @@ void Main()
     Game game;                                  // ゲーム画面
     int game_state = 0;                         // 今のゲームの状態
 
+    srand(static_cast<unsigned int>(time(nullptr)));
     Reseed(0);
 
     while (System::Update())

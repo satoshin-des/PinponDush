@@ -3,8 +3,9 @@
 
 #include <Siv3D.hpp>
 
-#include "core.h"
-
+/// <summary>
+/// 家
+/// </summary>
 class House
 {
 private:
@@ -14,7 +15,7 @@ private:
 	Texture m_house{ U"🏠"_emoji };
 
 public:
-	void setDesign();
+	void changeDesign();
 
 	/// <summary>
 	/// 家を表示する場所を設定する

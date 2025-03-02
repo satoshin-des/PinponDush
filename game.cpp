@@ -21,7 +21,7 @@ bool Game::failurePinponDush()
     {
         m_house_buttons[i].setPos(m_house_x, (2 * i + 1.0) * (WIDTH_Y) / (2 * m_num_house));
 
-        if (m_house_buttons[i].isClicked(true) && (!m_is_pinponed))
+        if (m_house_buttons[i].isClicked(CAN_CLICK) && (!m_is_pinponed))
         {
             if (i == successful_house_index)
             {
@@ -77,8 +77,8 @@ void Game::moveBackGroundHouse()
     // ‰Æ‚Ì•\Ž¦
     m_house_buttons[0].setPos(m_house_x, WIDTH_Y_HALF + HOUSE_SIZE);
     m_house_buttons[1].setPos(m_house_x, WIDTH_Y_HALF - HOUSE_SIZE);
-    m_house_buttons[0].isClicked(false);
-    m_house_buttons[1].isClicked(false);
+    m_house_buttons[0].isClicked(CANNOT_CLICK);
+    m_house_buttons[1].isClicked(CANNOT_CLICK);
 
     if (m_house_x <= -HOUSE_SIZE)
     {
@@ -189,8 +189,7 @@ int Game::optionScreen()
     moveBackGroundHouse();
 
     m_font(m_title_str).drawAt(Scene::Center(), Palette::Black);
-
-    // ‰Æ‚Ì“®‚­‘¬“x‚Ì’²®
+    
     SimpleGUI::Slider(m_speed_str + U": {:.2f}"_fmt(m_house_spd), m_house_spd, 1.0, 10.0, Vec2{ 200, 40 }, 100, 150);
 
     if (SimpleGUI::Slider(m_volume_str + U": {:.2f}"_fmt(m_volume), m_volume, Vec2{ 200, 100 }, 100, 150))
@@ -202,9 +201,9 @@ int Game::optionScreen()
 
     if (SimpleGUI::Button(m_change_house_button_label, Vec2{200, 160}))
     {
-        for (int i = 0; i < 100; ++i)
+        for (int i = 0; i < MAX_NUM_HOUSE; ++i)
         {
-            m_house_buttons[i].setDesign();
+            m_house_buttons[i].changeDesign();
         }
     }
 
