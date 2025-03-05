@@ -87,6 +87,7 @@
     <None Include="bgm\03.wav" />
     <None Include="bgm\01.wav" />
     <None Include="bgm\02.wav" />
+    <None Include="resources\engine\text_data.json" />
     <None Include="resources\engine\font\min\LICENSE" />
     <None Include="resources\engine\font\min\siv3d-min.woff" />
     <None Include="resources\engine\font\noto-emoji\LICENSE" />

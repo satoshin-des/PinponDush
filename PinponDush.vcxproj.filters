@@ -264,6 +264,9 @@
     <None Include="bgm\03.wav" />
     <None Include="bgm\01.wav" />
     <None Include="bgm\02.wav" />
+    <None Include="resources\engine\text_data.json">
+      <Filter>Resource Files\resources\engine</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Templates\Embeddable\web-player.html">

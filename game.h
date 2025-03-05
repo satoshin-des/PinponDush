@@ -28,19 +28,7 @@ private:
 	const Audio m_game_over_bgm{ Audio::Stream, GAME_OVER_BGM, Loop::Yes };	// リザルト画面のbgm
 	const Audio m_title_bgm{ Audio::Stream, TITLE_BGM, Loop::Yes };			// タイトル画面のbgm
 	const Audio m_main_bgm{ Audio::Stream, MAIN_BGM, Loop::Yes };			// ゲーム画面のbgm
-	const String m_volume_str = U"音量";									// 音量ボタンのラベル
-	const String m_speed_str = U"速度";										// 速度ボタンのラベル
-	const String m_title_str = U"ピンポンダッシュ  \n  チャレンジ!!";		// タイトルの表示をするための文字
-	const String m_change_house_button_label = U"デザイン変更";				// デザイン変更ボタンのラベル
-	const String m_retry_button_label = U"リトライ";						// リトライボタンのラベル
-	const String m_option_button = U"設定";									// 設定ボタンのラベル
-	const String m_start_button = U"スタート";								// スタートボタンのラベル
-	const String m_rule_button = U"ルール";									// ルールボタンのラベル
-	const String m_clear_str = U"成功！";									// 成功したときに出す文字列
-	const String m_title_button_label = U"タイトル";						// タイトルボタンのラベル
-	const String m_failure_str = U"失敗…";									// 失敗したときに出す文字列
-
-	const String m_rule_str = U"ルールは簡単，右から来る家のうちどれかが\n空き家なので，その家をタップしてピンポン\nダッシュを成功させるゲームです．\n　もし失敗したらその時点でゲームオーバー\nです．"; // ルール
+	const JSON m_text_data = JSON::Load(U"resources/engine/text_data.json");// ゲームに使うテキストをまとめてあるjsonファイル
 
 	/// <summary>
 	/// ピンポンダッシュに成功する家のインデックスを設定する

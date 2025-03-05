@@ -99,10 +99,10 @@ int Game::titleScreen()
     }
 
     moveBackGroundHouse();
-
-    m_font(m_title_str).drawAt(Scene::Center(), Palette::Black);
-
-    if (SimpleGUI::Button(m_start_button, Vec2{ 100, 500 }, 100))
+    
+    m_font(m_text_data[U"title"].getString()).drawAt(Scene::Center(), Palette::Black);
+    
+    if (SimpleGUI::Button(m_text_data[U"button"][U"start"].getString(), Vec2{100, 500}, 100))
     {
         m_title_bgm.stop();
         m_main_bgm.play();
@@ -114,7 +114,7 @@ int Game::titleScreen()
         return GAME_SCREEN;
     }
 
-    if (SimpleGUI::Button(m_rule_button, Vec2{ WIDTH_X_HALF - 50, 500 }, 100))
+    if (SimpleGUI::Button(m_text_data[U"button"][U"rule"].getString(), Vec2{WIDTH_X_HALF - 50, 500}, 100))
     {
         m_title_bgm.stop();
 
@@ -122,7 +122,7 @@ int Game::titleScreen()
         return RULE_SCREEN;
     }
 
-    if (SimpleGUI::Button(m_option_button, Vec2{ WIDTH_X - 200, 500 }, 100))
+    if (SimpleGUI::Button(m_text_data[U"button"][U"option"].getString(), Vec2{ WIDTH_X - 200, 500 }, 100))
     {
         m_house_pos_param.restart();
         return OPTION_SCREEN;
@@ -145,7 +145,7 @@ int Game::mainScreen()
     
     if (m_is_pinponed)
     {
-        jumpOutStr(m_clear_str);
+        jumpOutStr(m_text_data[U"success"].getString());
     }
     
     return GAME_SCREEN;
@@ -155,11 +155,11 @@ int Game::gameOverScreen()
 {
     moveBackGroundHouse();
 
-    jumpOutStr(m_failure_str);
+    jumpOutStr(m_text_data[U"failure"].getString());
 
     m_font(U"Score:{}"_fmt(m_score)).drawAt(Vec2{ WIDTH_X_HALF, 50 }, Palette::Black);
 
-    if (SimpleGUI::Button(m_retry_button_label, Vec2{ 100, 500 }, 100))
+    if (SimpleGUI::Button(m_text_data[U"button"][U"retry"].getString(), Vec2{ 100, 500 }, 100))
     {
         m_game_over_bgm.stop();
         m_main_bgm.play();
@@ -172,7 +172,7 @@ int Game::gameOverScreen()
         return GAME_SCREEN;
     }
 
-    if (SimpleGUI::Button(m_title_button_label, Vec2{ WIDTH_X - 200, 500 }, 100))
+    if (SimpleGUI::Button(m_text_data[U"button"][U"title"].getString(), Vec2{ WIDTH_X - 200, 500 }, 100))
     {
         m_game_over_bgm.stop();
 
@@ -188,18 +188,18 @@ int Game::optionScreen()
 {
     moveBackGroundHouse();
 
-    m_font(m_title_str).drawAt(Scene::Center(), Palette::Black);
+    m_font(m_text_data[U"title"].getString()).drawAt(Scene::Center(), Palette::Black);
     
-    SimpleGUI::Slider(m_speed_str + U": {:.2f}"_fmt(m_house_spd), m_house_spd, 1.0, 10.0, Vec2{ 200, 40 }, 100, 150);
+    SimpleGUI::Slider(m_text_data[U"button"][U"spd"].getString() + U": {:.2f}"_fmt(m_house_spd), m_house_spd, 1.0, 10.0, Vec2{ 200, 40 }, 100, 150);
 
-    if (SimpleGUI::Slider(m_volume_str + U": {:.2f}"_fmt(m_volume), m_volume, Vec2{ 200, 100 }, 100, 150))
+    if (SimpleGUI::Slider(m_text_data[U"button"][U"volume"].getString() + U": {:.2f}"_fmt(m_volume), m_volume, Vec2{ 200, 100 }, 100, 150))
     {
         m_main_bgm.setVolume(m_volume);
         m_title_bgm.setVolume(m_volume);
         m_game_over_bgm.setVolume(m_volume);
     }
 
-    if (SimpleGUI::Button(m_change_house_button_label, Vec2{200, 160}))
+    if (SimpleGUI::Button(m_text_data[U"button"][U"change"].getString(), Vec2{200, 160}))
     {
         for (int i = 0; i < MAX_NUM_HOUSE; ++i)
         {
@@ -207,7 +207,7 @@ int Game::optionScreen()
         }
     }
 
-    if (SimpleGUI::Button(m_title_button_label, Vec2{ WIDTH_X_HALF, 500 }, 100))
+    if (SimpleGUI::Button(m_text_data[U"button"][U"title"].getString(), Vec2{ WIDTH_X_HALF, 500 }, 100))
     {
         m_house_pos_param.restart();
         return TITLE_SCREEN;
@@ -220,9 +220,9 @@ int Game::ruleScreen()
 {
     moveBackGroundHouse();
 
-    m_score_font(m_rule_str).drawAt(Scene::Center(), Palette::Black);
+    m_score_font(m_text_data[U"rule"].getString()).drawAt(Scene::Center(), Palette::Black);
 
-    if (SimpleGUI::Button(m_title_button_label, Vec2{ WIDTH_X_HALF, 500 }, 100))
+    if (SimpleGUI::Button(m_text_data[U"button"][U"title"].getString(), Vec2{ WIDTH_X_HALF, 500 }, 100))
     {
         m_house_pos_param.restart();
         return TITLE_SCREEN;
