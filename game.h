@@ -59,6 +59,11 @@ private:
 
 public:
 	/// <summary>
+	/// フォントのプリロード
+	/// </summary>
+	void preloadFonts();
+
+	/// <summary>
 	/// タイトル画面の描画
 	/// </summary>
 	/// <returns>ゲーム状態</returns>

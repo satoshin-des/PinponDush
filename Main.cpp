@@ -17,6 +17,8 @@ void Main()
 
     srand(static_cast<unsigned int>(time(nullptr)));
     Reseed(0);
+    
+	game.preloadFonts();
 
     while (System::Update())
     {

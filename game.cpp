@@ -1,5 +1,16 @@
 #include "game.h"
 
+void Game::preloadFonts()
+{
+    // ルールのプリロード
+	m_score_font.preload(m_text_data[U"rule"].getString().sorted_and_uniqued());
+	// スコアのプリロード
+	m_score_font.preload(U"Score: 0123456789.");
+	// 成功と失敗のプリロード
+	m_font_MSDF.preload(m_text_data[U"success"].getString().sorted_and_uniqued());
+	m_font_MSDF.preload(m_text_data[U"failure"].getString().sorted_and_uniqued());
+}
+
 void Game::setSuccessfulHouse()
 {
     successful_house_index = Random(m_num_house - 1);
